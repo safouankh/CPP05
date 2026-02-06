@@ -1,4 +1,4 @@
-#include "bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 void Bureaucrat::signForm(Form &Form)

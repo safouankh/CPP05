@@ -1,4 +1,4 @@
-#include "bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 std::ostream& operator<<(std::ostream &filestream, Bureaucrat &Bureaucrat)
 {

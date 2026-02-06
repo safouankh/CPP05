@@ -16,10 +16,10 @@ $(NAME)		:	$(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean		:
-	del /Q $(OBJS) 2>nul || echo.
+	rm -rf $(OBJS)
 
 fclean		:	clean
-	del /Q $(NAME).exe $(NAME) 2>nul || echo.
+	rm -rf $(NAME)
 
 re			:	fclean all
 
