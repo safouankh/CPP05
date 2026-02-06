@@ -6,7 +6,7 @@ std::ostream &operator<<(std::ostream &filestream, Form &Form)
     filestream << "SIGNED : " << Form.get_signed() << "\n";
     filestream << "NAME : " << Form.get_name() << "\n";
     filestream << "grade_to_execute : " << Form.get_grade_to_execute() << "\n";
-    filestream << "grade_to_signed : " << Form.get_grade_to_sign() << "\n";
+    filestream << "grade_to_sign : " << Form.get_grade_to_sign() << "\n";
     return filestream;
 }
 
@@ -26,12 +26,12 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 
 const char*	Form::GradeTooHighException::what() const throw()
 {
-	return "the grade is two high";
+	return "the grade is too high";
 }
 
 const char*	Form::GradeTooLowException::what() const throw()
 {
-	return "the grade is two Low";
+	return "the grade is too Low";
 }
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_execute) : _name(name), _grade_to_sign(grade_to_sign) , _grade_to_execute(grade_to_execute)

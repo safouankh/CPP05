@@ -23,12 +23,12 @@ std::ostream& operator<<(std::ostream &filestream, Bureaucrat &Bureaucrat)
 
 const char*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "the grade is two high";
+	return "the grade is too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "the grade is two Low";
+	return "the grade is too Low";
 }
 
 Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
@@ -45,7 +45,6 @@ void Bureaucrat::incgrade(void)
 	if (grade <= 1)
 	{
 		throw Bureaucrat::GradeTooHighException();
-		return ;
 	}
 	grade--;
 }
@@ -55,7 +54,6 @@ void Bureaucrat::decgrade(void)
 	if (grade >= 150)
 	{
 		throw Bureaucrat::GradeTooLowException();
-		return ;
 	}
 	grade++;
 }

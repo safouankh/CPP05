@@ -10,7 +10,7 @@ class Bureaucrat
 		int	grade;
 	public:
 		Bureaucrat() : name("Bureaucrat"), grade(1) {};
-		Bureaucrat(std::string _name, int _grade);
+		Bureaucrat(const std::string _name, int _grade);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -21,17 +21,14 @@ class Bureaucrat
 			public :
 				virtual const char* what() const throw();
 		};
-		int getgrade(void);
-		std::string	getname(void);
+		int getgrade(void) const;
+		std::string	getname(void) const;
 		void incgrade(void);
 		void decgrade(void);
-		~Bureaucrat(void)
-		{
-			std::cout << "deconstractor called\n";
-		}
+		~Bureaucrat(void);
 };
 
-std::ostream& operator<<(std::ostream &filestream, Bureaucrat &Bureaucrat);
+std::ostream& operator<<(std::ostream &filestream,const Bureaucrat &Bureaucrat);
 
 
 #endif
