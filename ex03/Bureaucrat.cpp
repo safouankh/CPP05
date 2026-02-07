@@ -40,6 +40,17 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
 	grade = _grade;
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade)
+{
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
+{
+	if (this != &other)
+		grade = other.grade;
+	return *this;
+}
+
 void Bureaucrat::incgrade(void)
 {
 	if (grade <= 1)

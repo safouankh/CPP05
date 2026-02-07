@@ -15,6 +15,8 @@ class Aform
 	public:
 		Aform(void) : _name("Aform"),_signed(0), _grade_to_sign(10), _grade_to_execute(20) {};
 		Aform(std::string name, int grade_to_sign, int grade_to_execute);
+		Aform(const Aform& other);
+		Aform& operator=(const Aform& other);
 		class GradeTooLowException : public std::exception
 		{
 			public :

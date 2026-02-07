@@ -10,14 +10,16 @@ class Intern
 {
     public:
         Intern(void);
+        Intern(const Intern& other);
+        Intern& operator=(const Intern& other);
         Aform   *makeForm(std::string formName, std::string target);
         ~Intern();
 };
 
-typedef struct t_Form
+typedef struct s_Form
 {
     std::string name;
     Aform       *form;
-}      Form;
+}      t_Form;
 
 #endif

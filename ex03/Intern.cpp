@@ -5,7 +5,21 @@ Intern::Intern(void)
 
 }
 
-void clear_memory(Form forms[], int avoid)
+Intern::Intern(const Intern& other)
+{
+    (void)other;
+}
+
+Intern& Intern::operator=(const Intern& other)
+{
+    if (this != &other)
+    {
+        (void)other;
+    }
+    return *this;
+}
+
+void clear_memory(t_Form forms[], int avoid)
 {
     for (int i = 0; i < 3; i++)
     {
@@ -16,7 +30,7 @@ void clear_memory(Form forms[], int avoid)
 
 Aform   *Intern::makeForm(std::string formName, std::string target)
 {
-    Form forms[3] = 
+    t_Form forms[3] = 
     {
         {"shrubbery creation", new ShrubberyCreationForm(target)},
         {"robotomy request", new RobotomyRequestForm(target)},

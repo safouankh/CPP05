@@ -13,6 +13,21 @@ void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
         std::cout << target << " FAILED!" << std::endl;
 }
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+    : Aform(other), target(other.target)
+{
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
+{
+    if (this != &other)
+    {
+        Aform::operator=(other);
+        target = other.target;
+    }
+    return *this;
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 
