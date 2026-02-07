@@ -55,6 +55,21 @@ Form::Form(std::string name, int grade_to_sign, int grade_to_execute) : _name(na
 	}
 }
 
+Form::Form(const Form& other)
+	: _name(other._name),
+	  _signed(other._signed),
+	  _grade_to_sign(other._grade_to_sign),
+	  _grade_to_execute(other._grade_to_execute)
+{
+}
+
+Form& Form::operator=(const Form& other)
+{
+	if (this != &other)
+		_signed = other._signed;
+	return *this;
+}
+
 Form::~Form()
 {
 }

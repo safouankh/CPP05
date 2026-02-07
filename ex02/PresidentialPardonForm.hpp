@@ -11,6 +11,8 @@ class PresidentialPardonForm : public Aform
     public:
     PresidentialPardonForm(void) : Aform("Presidential Pardon", 25, 5), target("target") {};
     PresidentialPardonForm(std::string _target) : Aform("Presidential Pardon", 25, 5), target(_target) {};
+    PresidentialPardonForm(const PresidentialPardonForm& other);
+    PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
     void		execute(Bureaucrat const & executor) const;
     virtual     ~PresidentialPardonForm();
 };

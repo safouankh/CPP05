@@ -15,6 +15,8 @@ class Form
 	public:
 		Form(void) : _name("Form"),_signed(0), _grade_to_sign(10), _grade_to_execute(20) {};
 		Form(std::string name, int grade_to_sign, int grade_to_execute);
+		Form(const Form& other);
+		Form& operator=(const Form& other);
 		class GradeTooLowException : public std::exception
 		{
 			public :

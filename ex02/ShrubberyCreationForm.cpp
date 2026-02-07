@@ -19,6 +19,21 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     outfile.close();
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+	: Aform(other), target(other.target)
+{
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
+{
+	if (this != &other)
+	{
+		Aform::operator=(other);
+		target = other.target;
+	}
+	return *this;
+}
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
     

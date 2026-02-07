@@ -12,6 +12,8 @@ class ShrubberyCreationForm : public Aform
     public:
         ShrubberyCreationForm(void) : Aform("Shrubbery Creation", 145, 137) ,target("target") {};
         ShrubberyCreationForm(std::string _target) : Aform("Shrubbery Creation", 145, 137) ,target(_target) {};
+		ShrubberyCreationForm(const ShrubberyCreationForm& other);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 		void		execute(Bureaucrat const & executor) const;
         virtual     ~ShrubberyCreationForm();
 };

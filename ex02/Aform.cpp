@@ -47,6 +47,21 @@ Aform::Aform(std::string name, int grade_to_sign, int grade_to_execute) : _name(
 		throw Aform::GradeTooHighException();
 }
 
+Aform::Aform(const Aform& other)
+	: _name(other._name),
+	  _signed(other._signed),
+	  _grade_to_sign(other._grade_to_sign),
+	  _grade_to_execute(other._grade_to_execute)
+{
+}
+
+Aform& Aform::operator=(const Aform& other)
+{
+	if (this != &other)
+		_signed = other._signed;
+	return *this;
+}
+
 const char* Aform::FormNotSignedException::what() const throw()
 {
     return "form is not signed";
